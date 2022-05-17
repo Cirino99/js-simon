@@ -4,17 +4,26 @@
 
 const button = document.getElementById('play');
 const numeriArea = document.getElementById('numeri');
+const timerArea = document.getElementById('timer');
 var myRandomArr = [];
 var clock;
+var timer;
 button.addEventListener('click',
     function(){
         myRandomArr = arrayRandomUniqueNum(5,1,100);
         for(let i=0; i<5; i++){
             numeriArea.innerText += ` ${myRandomArr[i]}`;
         }
+        let time = 0;
+        timer = setInterval(() => {
+            time++;
+            timerArea.innerText = `Timer: ${time}`;
+        }, 1000);
         clock = setTimeout(
             function(){
                 numeriArea.innerText = '';
+                clearInterval(timer);
+                timerArea.innerText = '';
                 let myUtenteArr = numeriUtente();
                 let counter = 0;
                 for(let i=0; i<5; i++){
