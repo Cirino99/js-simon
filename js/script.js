@@ -5,11 +5,15 @@
 const button = document.getElementById('play');
 const numeriArea = document.getElementById('numeri');
 const timerArea = document.getElementById('timer');
-var myRandomArr = [];
+
 var clock;
 var timer;
 button.addEventListener('click',
     function(){
+        var myRandomArr = [];
+        numeriArea.innerText = '';
+        clearInterval(timer);
+        clearTimeout(clock)
         myRandomArr = arrayRandomUniqueNum(5,1,100);
         for(let i=0; i<5; i++){
             numeriArea.innerText += ` ${myRandomArr[i]}`;
