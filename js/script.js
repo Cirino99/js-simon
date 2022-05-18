@@ -13,7 +13,7 @@ button.addEventListener('click',
         var myRandomArr = [];
         numeriArea.innerText = '';
         clearInterval(timer);
-        clearTimeout(clock)
+        clearTimeout(clock);
         myRandomArr = arrayRandomUniqueNum(5,1,100);
         for(let i=0; i<5; i++){
             numeriArea.innerText += ` ${myRandomArr[i]}`;
